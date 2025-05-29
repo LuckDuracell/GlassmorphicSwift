@@ -48,12 +48,12 @@ extension View {
 }
 
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
-extension Color {
+public extension Color {
     static let fg = Color(light: 0xEAECF3, dark: 0x42413D)
     static let border = Color(light: 0xF1F2FA, dark: 0x525150)
     static let bg = Color(light: 0xE0E2E9, dark: 0x2F2E2A)
 
-    private init(light: Int, dark: Int, opacity: Double = 1.0) {
+    init(light: Int, dark: Int, opacity: Double = 1.0) {
         self = Color(UIColor { traitCollection in
             let hex = traitCollection.userInterfaceStyle == .dark ? dark : light
             return UIColor(
