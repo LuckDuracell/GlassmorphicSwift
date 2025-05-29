@@ -42,11 +42,13 @@ public struct GlassCardStyle: ViewModifier {
     public func body(content: Content) -> some View {
         content
             .padding()
-            .clipShape(RoundedRectangle(cornerRadius: 15))
             .background(
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(Color.border)
-                    .foregroundColor(Color.fg)
+            )
+            .background(
+                RoundedRectangle(cornerRadius: 15)
+                    .foregroundColor(.fg)
             )
     }
 }
