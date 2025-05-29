@@ -59,6 +59,9 @@ extension View {
     public func glassButtonStyle() -> some View {
         self.modifier(GlassButtonStyle())
     }
+    public func glassCardStyle() -> some View {
+        self.modifier(GlassCardStyle())
+    }
 }
 
 
