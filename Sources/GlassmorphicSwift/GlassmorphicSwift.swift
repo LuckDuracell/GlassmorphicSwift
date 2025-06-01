@@ -13,9 +13,17 @@ public struct GlassTextFieldStyle: ViewModifier {
             .padding(10)
             .padding(.horizontal, 12)
             .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.border, lineWidth: 1.5)
-                    .foregroundColor(.fg)
+                Group {
+                    if #available(iOS 17.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.border, lineWidth: 1.5)
+                            .fill(Color.fg)
+                    } else {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.border, lineWidth: 1.5)
+                            .foregroundColor(.fg)
+                    }
+                }
             )
     }
 }
